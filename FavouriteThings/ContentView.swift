@@ -11,21 +11,28 @@ import SwiftUI
 struct ContentView: View {
     
     // There can only be ONE top level view
-    var body: some View {
+    var body: some View{
+        
+        NavigationView {
+            
+            List{
+                
 
-        VStack {
-            Text("hi i'm amelia, let me tell you more about me.")
-            Text("-")
-            Text("-")
-            Text("hi i'm amelia, let me tell you more about me.")
-            Text("hi i'm amelia, let me tell you more about me.")
-            Group {
-                Text("hi i'm amelia, let me tell you more about me.")
-                Text("hi i'm amelia, let me tell you more about me.")
-                Text("hi i'm amelia, let me tell you more about me.")
-                Text("hi i'm amelia, let me tell you more about me.")
-                Text("hi i'm amelia, let me tell you more about me.")
+                NavigationLink(
+                    destination: ThingsILove()) {
+                    //Prvide the label for the navigation link
+                    Text("About me...")
+                        .fontWeight(.medium)
+                }
+
+                NavigationLink(
+                    destination: ThingsIAmPassionateAbout()) {
+                    //Prvide the label for the navigation link
+                    Text("I'm passionate about...")
+                        .fontWeight(.medium)
+                }
             }
+            
         }
     }
 }
@@ -35,3 +42,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
